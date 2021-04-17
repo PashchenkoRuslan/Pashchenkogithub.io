@@ -1,0 +1,321 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.menuIcon {
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section {
+    background-color: #111;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 15px rgb(0, 0, 0,0.05);
+}
+
+
+.container header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.nav_a {
+    margin: 0 20px;
+}
+
+
+
+.text_content {
+    color: #fff;
+
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 19px;
+    color: #fff;
+}
+
+.nav a {
+    /* color: #111; */
+    padding: 4px 10px;
+    
+    transition: all 0.8s ease;
+    letter-spacing: 3px;
+}
+
+.nav a:hover {
+    background: #fff;
+    color: #111;
+}
+
+.a_active {
+    background: #fff;
+    color: #111;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banner_text {
+    position: relative;
+    max-width: 45%;
+}
+
+.banner_text div {
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.banner_text div.active {
+    display: inherit;
+}
+
+h1 {
+    font-size: 10em;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+.content_text {
+    font-size: 19px;
+    color: #fff;
+
+    margin-top: 25px;
+}
+
+
+.banner_video video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.banner_video video.active {
+    opacity: 1;
+}
+
+
+.banner_btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+}
+
+.banner_btn ul {
+    display: flex;
+    /* width: 200px;
+    height: 100px; */
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner_btn ul li {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.8s ease;
+}
+
+.banner_btn ul li:hover {
+    background: rgb(231, 225, 225);
+}
+
+
+.banner_btn ul li img {
+    width: 35px;
+    height: 35px;
+}
+
+.sci {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    background: #fff;
+}
+
+.sci ul li {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.8s ease;
+}
+
+.sci ul li:hover {
+    background: rgb(231, 225, 225);
+}
+
+
+.sci ul li img {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+
+/* adaptive */
+
+@media (max-width:991px) {
+    .container {
+        padding: 20px;
+    }
+    .container::before {
+        width: 100%;
+    }
+    .container header {
+        padding: 10px 20px;
+    }
+    h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+    .container .content .banner_text {
+        text-align: center;
+    }
+
+    .banner_text {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .banner_text p{
+        font-size: 18px;
+    }
+
+
+
+    .container header ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #333;
+        line-height: 3.5;
+    }
+
+    .container header ul a {
+        color: #000;
+    }
+
+    .container header.active ul {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+
+    .container .header ul li {
+        text-align: center;
+        margin: 10px;
+    }
+    .container .header ul li a {
+        columns: #333;
+        font-size: 1.5em;
+    }
+    .container .header ul li a:hover {
+        columns: #f00;
+    }
+
+    .menuIcon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        display: inherit;
+        z-index: 10000;
+        background: #fff url('../imgicn/menu.png');
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .menuIcon.active {
+
+        background: #fff url('../imgicn/close.png');
+        background-size: 35px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
